@@ -12,7 +12,7 @@ public class SendMail {
 
     String subject;
     String to;
-    String from = "vjchavan582000@gmail.com";
+    String from = "xxxxx@gmail.com";
     String company;
     String recruiterName;
     public static String message;
@@ -28,9 +28,9 @@ public class SendMail {
                 "I would love to discuss any potential openings that match my expertise. Please find my resume attached for your review. Looking forward to hearing from you.\n" +
                 "\n" +
                 "Best regards,\n" +
-                "Vijay Chavan\n" +
-                "Mob: +91 9689756247\n" +
-                "https://www.linkedin.com/in/vchavan/";
+                "[You Name]\n" +
+                "Mob: [Your contact number]\n" +
+                "https://www.linkedin.com/in/[your linkedin username]/";
         this.subject = "Seeking Backend Developer Opportunities at "+company;
     }
 
@@ -55,7 +55,7 @@ public class SendMail {
         Session session=Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from, "cemb ayso tnzv kgnp");
+                return new PasswordAuthentication(from, "[ your password ]");
             }
 
 
@@ -82,8 +82,7 @@ public class SendMail {
             //attachement..
 
             //file path
-            String path="/Users/panda/Downloads/Vijay_Chavan_Resume.pdf";
-            //String signPath="/Users/panda/Downloads/Vijay.png";
+            String path="[path/to/your/resumefile]";
 
             MimeMultipart mimeMultipart = new MimeMultipart();
             //text
@@ -102,7 +101,6 @@ public class SendMail {
                 File file=new File(path);
                 // File signFile=new File(signPath);
                 fileMime.attachFile(file);
-                // signMime.attachFile(signFile);
 
 
                 mimeMultipart.addBodyPart(textMime);
